@@ -1,3 +1,7 @@
+body {
+    background-color: transparent;
+}
+
 html { 
     background: url(img/bg.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -17,4 +21,32 @@ html {
     -webkit-box-shadow: 0px 7px 15px 0px rgba(50, 50, 50, 0.61);
     -moz-box-shadow:    0px 7px 15px 0px rgba(50, 50, 50, 0.61);
     box-shadow:         0px 7px 15px 0px rgba(50, 50, 50, 0.61);
+}
+
+.imgLeft {
+    float: left;
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    margin: 25px;
+}
+
+.imgCenter {
+    float: left;
+    background-color: black;
+    width: 300px;
+    height: 300px;
+    margin: 25px;
+}
+
+.imgRight {
+    float: left;
+    background-color: blue;
+    width: 300px;
+    height: 300px;
+    margin: 25px;
+}
+
+.searchGrid li {
+    list-style-type: none;
 }
