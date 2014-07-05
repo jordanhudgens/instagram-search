@@ -1,0 +1,20 @@
+html { 
+    background: url(img/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logoSlot {
+    padding: 15px;
+    -webkit-box-shadow: 0px 7px 15px 0px rgba(50, 50, 50, 0.61);
+    -moz-box-shadow:    0px 7px 15px 0px rgba(50, 50, 50, 0.61);
+    box-shadow:         0px 7px 15px 0px rgba(50, 50, 50, 0.61);
+}
+
+.searcher {
+    -webkit-box-shadow: 0px 7px 15px 0px rgba(50, 50, 50, 0.61);
+    -moz-box-shadow:    0px 7px 15px 0px rgba(50, 50, 50, 0.61);
+    box-shadow:         0px 7px 15px 0px rgba(50, 50, 50, 0.61);
+}
