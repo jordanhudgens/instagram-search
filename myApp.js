@@ -4,10 +4,10 @@ var app = angular.module("InstaSearch", []);
 app.factory('instagram', ['$http', function($http){
 
 	return {
-		fetchPopular: function(callback){
+		fetchPopular: function(callback, myQuery){
             
-      var endPoint = "https://api.instagram.com/v1/media/popular?client_id=4efb143562a54f5f947ec21329a0890f&callback=JSON_CALLBACK";
-      
+      var endPoint = "https://api.instagram.com/v1/tags/" + myQuery + "/media/recent?client_id=4efb143562a54f5f947ec21329a0890f&callback=JSON_CALLBACK";
+
       $http.jsonp(endPoint).success(function(response){
           callback(response.data);
       });
@@ -31,9 +31,17 @@ function ($scope, instagram){
 
 	$scope.pics = [];
 
-	instagram.fetchPopular(function(data){
+  $scope.fetchPics = function (tag) {
+        instagram.fetchPopular(function(data){
+      $scope.pics = data;
+    }, tag);
+  }
 
-		$scope.pics = data;
-	});
+  $scope.$watch('searchQuery', function(newValue, oldValue) {
+    $scope.fetchPics(newValue);
+  });
+
+
+
 
 }]);
