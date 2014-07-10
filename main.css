@@ -60,3 +60,9 @@ html {
     float: left;
     margin: 15px;
 }
+
+.resultText {
+    margin: 25px;
+    margin-right: 350px;
+    margin-left: 350px;
+}
