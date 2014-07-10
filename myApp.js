@@ -8,6 +8,9 @@ app.factory('instagram', ['$http', function($http){
             
       var endPoint = "https://api.instagram.com/v1/tags/" + myQuery + "/media/recent?client_id=4efb143562a54f5f947ec21329a0890f&callback=JSON_CALLBACK";
 
+      // Try using this:
+      // http://angular-ui.github.io/bootstrap/#/typeahead
+      
       $http.jsonp(endPoint).success(function(response){
           callback(response.data);
       });
@@ -34,14 +37,13 @@ function ($scope, instagram){
   $scope.fetchPics = function (tag) {
         instagram.fetchPopular(function(data){
       $scope.pics = data;
+      $scope.fetchPics(newValue);
     }, tag);
   }
 
-  $scope.$watch('searchQuery', function(newValue, oldValue) {
-    $scope.fetchPics(newValue);
-  });
-
-
+  // $scope.$watch('searchQuery', function(newValue, oldValue) {
+  //   $scope.fetchPics(newValue);
+  // });
 
 
 }]);
